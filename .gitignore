@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+build/
+.svelte-kit/
+dist/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+veterans-api
