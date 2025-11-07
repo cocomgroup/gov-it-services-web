@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureGov Solutions - Government & DoD IT Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #ef4444;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+        }
+
+        /* Services */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Capabilities */
+        .capabilities {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+
+        .capability-card {
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+        }
+
+        .cert-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#1e3a8a"/>
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>SecureGov Solutions</span>
+                </div>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Trusted IT Solutions for Government & Defense</h1>
+        <p class="subtitle">
+            Delivering mission-critical technology services with FedRAMP authorization, 
+            cleared workforce, and decades of experience supporting federal agencies and DoD.
+        </p>
+        <div class="hero-stats">
+            <div>
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Years Serving Government</div>
+            </div>
+            <div>
+                <div class="stat-value">200+</div>
+                <div class="stat-label">Cleared Professionals</div>
+            </div>
+            <div>
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Active Contracts</div>
+            </div>
+        </div>
+        <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+            <a href="#services" class="btn btn-secondary">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Mission-Critical IT Services</h2>
+            <p>Comprehensive technology solutions designed specifically for government and defense requirements</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Secure Cloud Infrastructure</h3>
+                <p>FedRAMP authorized cloud solutions with IL4/IL5 compliance for sensitive government data.</p>
+                <ul class="features-list">
+                    <li>AWS GovCloud & Azure Government</li>
+                    <li>FedRAMP High & DoD Impact Level 5</li>
+                    <li>Continuous monitoring & compliance</li>
+                    <li>Zero-trust architecture implementation</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Cybersecurity & ATO Services</h3>
+                <p>Comprehensive security solutions ensuring NIST 800-53 compliance and accelerated ATO processes.</p>
+                <ul class="features-list">
+                    <li>NIST 800-53 & CMMC compliance</li>
+                    <li>Security assessment & authorization</li>
+                    <li>Penetration testing & vulnerability management</li>
+                    <li>24/7 security operations center</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>DevSecOps & CI/CD</h3>
+                <p>Automated, secure software delivery pipelines that meet government security requirements.</p>
+                <ul class="features-list">
+                    <li>Automated security scanning & compliance checks</li>
+                    <li>Container orchestration (Kubernetes)</li>
+                    <li>Infrastructure as Code (Terraform, Ansible)</li>
+                    <li>Continuous integration & deployment</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Analytics & AI/ML</h3>
+                <p>Advanced analytics and machine learning solutions for mission-critical decision making.</p>
+                <ul class="features-list">
+                    <li>Big data processing & analytics</li>
+                    <li>Machine learning model development</li>
+                    <li>Predictive analytics for operations</li>
+                    <li>Data visualization & dashboards</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Application Modernization</h3>
+                <p>Transform legacy systems into modern, cloud-native applications with enhanced security.</p>
+                <ul class="features-list">
+                    <li>Legacy system assessment & migration</li>
+                    <li>Microservices architecture</li>
+                    <li>API development & integration</li>
+                    <li>Mobile application development</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Managed IT Services</h3>
+                <p>Comprehensive IT operations support with cleared personnel and 24/7 availability.</p>
+                <ul class="features-list">
+                    <li>24/7 managed operations</li>
+                    <li>Cleared personnel (Secret/TS/SCI)</li>
+                    <li>IT service management (ITIL)</li>
+                    <li>Help desk & user support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities" class="capabilities">
+        <div class="section-header">
+            <h2>Why Choose SecureGov Solutions</h2>
+            <p>Trusted expertise and proven capabilities for mission-critical government IT services</p>
+        </div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <h3>Security Cleared Workforce</h3>
+                <p>Our team maintains active security clearances to support classified programs.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Compliance & Certifications</h3>
+                <p>Certified and compliant with all major government security frameworks.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Mission-Focused Experience</h3>
+                <p>Decades of experience supporting critical government missions.</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Certifications & Compliance</h3>
+            <div class="cert-badges">
+                <span class="badge">FedRAMP Authorized</span>
+                <span class="badge">CMMC Level 3</span>
+                <span class="badge">ISO 27001</span>
+                <span class="badge">NIST 800-53</span>
+                <span class="badge">DoD IL5</span>
+                <span class="badge">SOC 2 Type II</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#1e3a8a"/>
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>SecureGov Solutions</span>
+                </div>
+                <p style="opacity: 0.8;">
+                    Delivering mission-critical IT solutions to government and defense agencies 
+                    with unmatched expertise, security, and compliance.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Cloud Infrastructure</a></li>
+                    <li><a href="#services">Cybersecurity & ATO</a></li>
+                    <li><a href="#services">DevSecOps</a></li>
+                    <li><a href="#services">Data Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#capabilities">About Us</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📞 (202) 555-0100</li>
+                    <li>✉️ contracts@securegovsolutions.com</li>
+                    <li>📍 Washington, DC Metro</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SecureGov Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
