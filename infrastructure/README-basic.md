@@ -5,22 +5,21 @@
 
 ```bash
 aws cloudformation validate-template \
-  --template-body file://webapp-infrastructure.yaml
+  --template-body file://webapp-simple.yaml
 ```
 
 ### 3.2 Deploy Stack
 
-```bash
-aws cloudformation create-stack \
-  --stack-name my-webapp \
-  --template-body file://webapp-infrastructure.yaml \
-  --parameters \
-    ParameterKey=EnvironmentName,ParameterValue=prod \
-    ParameterKey=InstanceType,ParameterValue=t3.medium \
-    ParameterKey=KeyName,ParameterValue=YOUR_KEY_PAIR_NAME \
-    ParameterKey=SSHLocation,ParameterValue=YOUR_IP/32 \
-  --capabilities CAPABILITY_IAM \
-  --region us-east-1
+```
+cd  infrastructure
+
+.\deploy-stack-simple.ps1
+EnvironmentName -> dev
+InstanceType -> t3.micro
+KeyName -> my-key
+SSHLocation -> 0.0.0.0/0
+region -> us-east-1
+
 ```
 
 ### 3.3 Wait for Completion
