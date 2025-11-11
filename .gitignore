@@ -1,11 +1,12 @@
 # Dependencies
 node_modules/
-vendor/
 
 # Build outputs
 build/
 .svelte-kit/
 dist/
+
+frontend/package-lock.json
 
 # Environment
 .env
@@ -41,4 +42,3 @@ coverage/
 *.dll
 *.so
 *.dylib
-veterans-api
