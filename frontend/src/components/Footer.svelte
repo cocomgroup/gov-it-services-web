@@ -73,7 +73,7 @@
           <a href="#security">Security</a>
         </div>
       </div>
-      <button class="back-to-top" on:click={scrollToTop} aria-label="Back to top">
+      <button class="back-to-top" onclick={scrollToTop} aria-label="Back to top">
         ↑ Back to Top
       </button>
     </div>

@@ -9,9 +9,9 @@
     features: string[];
   }
 
-  let services: Service[] = [];
-  let loading = true;
-  let error = '';
+  let services: Service[] = $state([]);
+  let loading = $state(true);
+  let error = $state('');
 
   const iconMap: Record<string, string> = {
     cloud: '☁️',

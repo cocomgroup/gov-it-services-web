@@ -1,5 +1,5 @@
 <script lang="ts">
-  let mobileMenuOpen = false;
+  let mobileMenuOpen = $state(false);
 
   function toggleMenu() {
     mobileMenuOpen = !mobileMenuOpen;
@@ -25,7 +25,7 @@
         <span>SecureGov Solutions</span>
       </div>
 
-      <button class="mobile-menu-btn" on:click={toggleMenu} aria-label="Toggle menu">
+      <button class="mobile-menu-btn" onclick={toggleMenu} aria-label="Toggle menu">
         <svg width="24" height="24" fill="none" stroke="currentColor">
           {#if mobileMenuOpen}
             <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
@@ -36,10 +36,10 @@
       </button>
 
       <ul class="nav-menu" class:active={mobileMenuOpen}>
-        <li><button on:click={() => scrollToSection('services')}>Services</button></li>
-        <li><button on:click={() => scrollToSection('capabilities')}>Capabilities</button></li>
-        <li><button on:click={() => scrollToSection('contact')}>Contact</button></li>
-        <li><button class="cta-btn" on:click={() => scrollToSection('contact')}>Request Consultation</button></li>
+        <li><button onclick={() => scrollToSection('services')}>Services</button></li>
+        <li><button onclick={() => scrollToSection('capabilities')}>Capabilities</button></li>
+        <li><button onclick={() => scrollToSection('contact')}>Contact</button></li>
+        <li><button class="cta-btn" onclick={() => scrollToSection('contact')}>Request Consultation</button></li>
       </ul>
     </div>
   </nav>

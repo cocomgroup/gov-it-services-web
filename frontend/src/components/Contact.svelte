@@ -1,15 +1,15 @@
 <script lang="ts">
-  let formData = {
+  let formData = $state({
     name: '',
     email: '',
     organization: '',
     clearance: '',
     message: ''
-  };
+  });
 
-  let submitting = false;
-  let submitStatus: 'idle' | 'success' | 'error' = 'idle';
-  let statusMessage = '';
+  let submitting = $state(false);
+  let submitStatus: 'idle' | 'success' | 'error' = $state('idle');
+  let statusMessage = $state('');
 
   async function handleSubmit(event: Event) {
     event.preventDefault();
@@ -95,7 +95,7 @@
       </div>
 
       <div class="contact-form">
-        <form on:submit={handleSubmit}>
+        <form onsubmit={handleSubmit}>
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input

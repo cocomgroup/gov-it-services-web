@@ -211,7 +211,7 @@ func main() {
 	api.HandleFunc("/capabilities", getCapabilities).Methods("GET")
 	api.HandleFunc("/contact", submitContact).Methods("POST")
 
-	r.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]string{"status": "healthy"})
 	}).Methods("GET")

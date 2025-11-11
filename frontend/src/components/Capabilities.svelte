@@ -13,9 +13,9 @@
     stats: Stat[];
   }
 
-  let capabilities: Capability[] = [];
-  let loading = true;
-  let error = '';
+  let capabilities: Capability[] = $state([]);
+  let loading = $state(true);
+  let error = $state('');
 
   onMount(async () => {
     try {

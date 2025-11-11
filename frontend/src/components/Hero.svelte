@@ -30,8 +30,8 @@
         </div>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" on:click={scrollToContact}>Schedule Consultation</button>
-        <button class="btn-secondary" on:click={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+        <button class="btn-primary" onclick={scrollToContact}>Schedule Consultation</button>
+        <button class="btn-secondary" onclick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
           Our Services
         </button>
       </div>
