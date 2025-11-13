@@ -5,7 +5,7 @@ A professional IT services website built with TypeScript/Svelte frontend and Go 
 ## 🏗️ Architecture
 
 ### Frontend
-- **Framework**: Svelte 4 with TypeScript
+- **Framework**: Svelte 5 with TypeScript
 - **Build Tool**: Vite
 - **Styling**: Custom CSS with CSS variables
 - **Features**:

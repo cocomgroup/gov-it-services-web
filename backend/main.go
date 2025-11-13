@@ -155,12 +155,11 @@ var capabilities = []Capability{
 // Environment configuration
 var (
     port = os.Getenv("PORT")
-    dbURL = os.Getenv("DATABASE_URL")
 )
 
 func enableCORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Origin", "https://d2x4151ygv5ad8.cloudfront.net")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 

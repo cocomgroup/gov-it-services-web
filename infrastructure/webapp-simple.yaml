@@ -7,11 +7,6 @@ Parameters:
     Type: String
     Default: it-gov-svc
 
-  BucketPrefix:
-    Description: Unique prefix for bucket names
-    Type: String
-    Default: it-gov-svc
-
   EnvironmentName:
     Description: Environment name prefix
     Type: String
